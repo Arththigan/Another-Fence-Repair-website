@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body text-charcoal-900 antialiased;
+  background: #e9ecef;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display;
+}
+
+.container-px {
+  @apply px-6 sm:px-8 lg:px-12;
+}
+
+.section-py {
+  @apply py-20 sm:py-24 lg:py-28;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#ffd84d] px-6 py-3 font-display text-sm font-bold text-charcoal-950 shadow-lg shadow-[#ffd84d]/20 transition hover:bg-[#ffe477] hover:shadow-xl hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-charcoal-900 px-6 py-3 font-display text-sm font-semibold text-charcoal-900 transition hover:bg-charcoal-900 hover:text-white;
+}
+
+.btn-outline-light {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-6 py-3 font-display text-sm font-semibold text-white transition hover:bg-white hover:text-charcoal-900;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 rounded-full bg-fence-100 px-4 py-1.5 text-xs font-display font-bold uppercase tracking-widest text-fence-700;
+}
+
+::selection { background: #ffd84d; color: #071f33; }
+
+.page-shell { width: min(1380px, calc(100% - 32px)); margin: 20px auto; display: flex; flex-direction: column; gap: 28px; }
+.page-shell > section { overflow: hidden; border-radius: 34px; box-shadow: 0 1px 0 rgba(7, 31, 51, .05); }
+.page-shell > section:not(#home) { border: 1px solid rgba(7, 31, 51, .06); }
+.page-shell #services > div > div:last-child > div,
+.page-shell #why-us > div > div:last-child > div,
+.page-shell #testimonials > div > div:last-child > div { border-radius: 24px; box-shadow: 0 10px 30px rgba(7, 31, 51, .06); }
+.page-shell #gallery img { border-radius: 22px; }
+.page-shell #faq > div > div:last-child > div { border-radius: 18px; box-shadow: 0 7px 20px rgba(7, 31, 51, .04); }
+
+@media (max-width: 640px) {
+  .page-shell { width: calc(100% - 16px); margin: 8px auto 16px; gap: 12px; }
+  .page-shell > section { border-radius: 22px; }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0) scale(.985);
+  filter: blur(5px);
+  transition:
+    opacity .7s cubic-bezier(.22, 1, .36, 1),
+    transform .7s cubic-bezier(.22, 1, .36, 1),
+    filter .6s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
