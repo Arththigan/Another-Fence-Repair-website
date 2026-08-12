@@ -1,7 +1,7 @@
 const services = [
   {
     title: 'Wood Fence Repair',
-    image: '/images/wood-fence-repair.webp',
+    image: '/images/optimized/wood-fence-repair',
     desc: 'Rotted posts, broken panels, and leaning sections restored to solid, straight condition.',
     icon: 'M4 21V9l8-6 8 6v12M9 21v-6h6v6',
   },

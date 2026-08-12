@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://another-fence-repair.web.app/sitemap.xml
+
+# AI-readable site summary
+# https://another-fence-repair.web.app/llms.txt

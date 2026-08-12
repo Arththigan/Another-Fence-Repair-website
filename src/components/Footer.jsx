@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import logo from '../assets/logo.webp'
 import { business } from '../data/business.js'
 
@@ -27,10 +26,10 @@ export default function Footer() {
     <footer className="bg-charcoal-950 text-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 container-px py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link to="/" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <img src={logo} alt="Another Fence Repair logo" width="180" height="134" loading="lazy" className="h-14 w-auto" />
             <span className="font-display text-lg font-bold text-white">Another Fence Repair</span>
-          </Link>
+          </a>
           <p className="mt-4 text-sm leading-relaxed text-white/75">
             Rochester&apos;s trusted fence repair &amp; installation crew — licensed, insured, and
             committed to keeping your property secure and looking sharp.
@@ -105,12 +104,12 @@ export default function Footer() {
             &copy; {year} {business.name}. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="transition hover:text-[#ffd84d]">
+            <a href="/privacy-policy" className="transition hover:text-[#ffd84d]">
               Privacy Policy
-            </Link>
-            <Link to="/terms-conditions" className="transition hover:text-[#ffd84d]">
+            </a>
+            <a href="/terms-conditions" className="transition hover:text-[#ffd84d]">
               Terms &amp; Conditions
-            </Link>
+            </a>
           </div>
         </div>
       </div>

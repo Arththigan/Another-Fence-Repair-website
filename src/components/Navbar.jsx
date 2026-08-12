@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.webp'
 import { business } from '../data/business.js'
 
@@ -17,8 +16,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('#home')
-  const location = useLocation()
-  const navigate = useNavigate()
+  const pathname = window.location.pathname
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -29,10 +27,10 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false)
-  }, [location])
+  }, [pathname])
 
   useEffect(() => {
-    if (location.pathname !== '/') return undefined
+    if (pathname !== '/') return undefined
     const sections = navLinks
       .map((link) => document.querySelector(link.hash))
       .filter(Boolean)
@@ -47,14 +45,14 @@ export default function Navbar() {
     )
     sections.forEach((section) => observer.observe(section))
     return () => observer.disconnect()
-  }, [location.pathname])
+  }, [pathname])
 
   const goToSection = (hash) => (e) => {
     e.preventDefault()
     setOpen(false)
     setActive(hash)
-    if (location.pathname !== '/') {
-      navigate('/' + hash)
+    if (pathname !== '/') {
+      window.location.assign('/' + hash)
       return
     }
     const el = document.querySelector(hash)
@@ -64,13 +62,13 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-transparent px-2 pt-2 sm:px-4 sm:pt-3">
       <div className={`mx-auto flex max-w-[1348px] items-center justify-between rounded-full border border-white/70 bg-white/90 px-3 backdrop-blur-xl transition-all duration-500 ${scrolled ? 'py-1.5 shadow-[0_14px_40px_rgba(7,31,51,.14)]' : 'py-2 shadow-[0_8px_25px_rgba(7,31,51,.08)]'}`}>
-        <Link to="/" className="group flex items-center gap-2 rounded-full pr-3">
+        <a href="/" className="group flex items-center gap-2 rounded-full pr-3">
           <img src={logo} alt="Another Fence Repair logo" width="180" height="134" className={`w-auto transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'}`} />
           <span className="hidden font-display text-sm font-extrabold leading-tight text-charcoal-950 sm:block">
             Another Fence
             <span className="block text-[11px] font-bold uppercase tracking-widest text-fence-700">Repair</span>
           </span>
-        </Link>
+        </a>
 
         <nav className="hidden items-center gap-1.5 rounded-full bg-charcoal-950 p-1.5 shadow-inner lg:flex">
           {navLinks.map((link) => (

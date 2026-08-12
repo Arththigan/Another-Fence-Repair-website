@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import LegalPage, { LegalSection } from '../components/LegalPage.jsx'
 import { business } from '../data/business.js'
 
@@ -94,9 +93,9 @@ export default function TermsConditions() {
       <LegalSection number="5" title="Cookies">
         <p>
           We use cookies in accordance with our{' '}
-          <Link to="/privacy-policy" className="font-semibold text-fence-600 hover:text-fence-700">
+          <a href="/privacy-policy" className="font-semibold text-fence-600 hover:text-fence-700">
             Privacy Policy
-          </Link>{' '}
+          </a>{' '}
           to improve user experience and website functionality.
         </p>
       </LegalSection>

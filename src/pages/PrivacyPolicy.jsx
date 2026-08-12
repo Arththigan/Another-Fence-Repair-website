@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import LegalPage, { LegalSection } from '../components/LegalPage.jsx'
 import { business } from '../data/business.js'
 
@@ -160,9 +159,9 @@ export default function PrivacyPolicy() {
         </p>
         <p>
           See also our{' '}
-          <Link to="/terms-conditions" className="font-semibold text-fence-600 hover:text-fence-700">
+          <a href="/terms-conditions" className="font-semibold text-fence-600 hover:text-fence-700">
             Terms &amp; Conditions
-          </Link>
+          </a>
           .
         </p>
       </LegalSection>
