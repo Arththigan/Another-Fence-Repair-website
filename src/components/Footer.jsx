@@ -21,6 +21,7 @@ const quickLinks = [
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const sectionHref = (hash) => `${window.location.pathname === '/' ? '' : '/'}${hash}`
 
   return (
     <footer className="bg-charcoal-950 text-white">
@@ -52,7 +53,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm font-medium text-white/80">
             {services.map((s) => (
               <li key={s}>
-                <a href="#services" className="transition hover:text-[#ffd84d]">
+                <a href={sectionHref('#services')} className="transition hover:text-[#ffd84d]">
                   {s}
                 </a>
               </li>
@@ -65,7 +66,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm font-medium text-white/80">
             {quickLinks.map((l) => (
               <li key={l.label}>
-                <a href={l.hash} className="transition hover:text-[#ffd84d]">
+                <a href={sectionHref(l.hash)} className="transition hover:text-[#ffd84d]">
                   {l.label}
                 </a>
               </li>

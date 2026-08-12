@@ -15,8 +15,8 @@ const navLinks = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [active, setActive] = useState('#home')
   const pathname = window.location.pathname
+  const [active, setActive] = useState(pathname === '/' ? '#home' : '')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -27,6 +27,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false)
+    if (pathname !== '/') setActive('')
   }, [pathname])
 
   useEffect(() => {
@@ -50,11 +51,11 @@ export default function Navbar() {
   const goToSection = (hash) => (e) => {
     e.preventDefault()
     setOpen(false)
-    setActive(hash)
     if (pathname !== '/') {
       window.location.assign('/' + hash)
       return
     }
+    setActive(hash)
     const el = document.querySelector(hash)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
