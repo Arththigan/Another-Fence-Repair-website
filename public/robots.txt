@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://another-fence-repair.web.app/sitemap.xml

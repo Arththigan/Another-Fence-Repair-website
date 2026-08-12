@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.webp'
 import { business } from '../data/business.js'
 
 const navLinks = [
@@ -65,10 +65,10 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-transparent px-2 pt-2 sm:px-4 sm:pt-3">
       <div className={`mx-auto flex max-w-[1348px] items-center justify-between rounded-full border border-white/70 bg-white/90 px-3 backdrop-blur-xl transition-all duration-500 ${scrolled ? 'py-1.5 shadow-[0_14px_40px_rgba(7,31,51,.14)]' : 'py-2 shadow-[0_8px_25px_rgba(7,31,51,.08)]'}`}>
         <Link to="/" className="group flex items-center gap-2 rounded-full pr-3">
-          <img src={logo} alt="Another Fence Repair logo" className={`w-auto transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'}`} />
+          <img src={logo} alt="Another Fence Repair logo" width="180" height="134" className={`w-auto transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'}`} />
           <span className="hidden font-display text-sm font-extrabold leading-tight text-charcoal-950 sm:block">
             Another Fence
-            <span className="block text-[11px] font-bold uppercase tracking-widest text-fence-600">Repair</span>
+            <span className="block text-[11px] font-bold uppercase tracking-widest text-fence-700">Repair</span>
           </span>
         </Link>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
             </span>
             {business.phone}
           </a>
-          <a href="#contact" onClick={goToSection('#contact')} className="group inline-flex items-center gap-2 rounded-full bg-[#ff7a2f] px-5 py-3 font-display text-xs font-extrabold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ed671e] hover:shadow-lg">
+          <a href="#contact" onClick={goToSection('#contact')} className="group inline-flex items-center gap-2 rounded-full bg-[#a83e08] px-5 py-3 font-display text-xs font-extrabold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#8f3205] hover:shadow-lg">
             Get Free Quote <span className="transition-transform duration-300 group-hover:rotate-45">↗</span>
           </a>
         </div>

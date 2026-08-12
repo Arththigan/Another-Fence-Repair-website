@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.webp'
 import { business } from '../data/business.js'
 
 const services = [
@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 container-px py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Another Fence Repair logo" className="h-14 w-auto" />
+            <img src={logo} alt="Another Fence Repair logo" width="180" height="134" loading="lazy" className="h-14 w-auto" />
             <span className="font-display text-lg font-bold text-white">Another Fence Repair</span>
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-white/75">

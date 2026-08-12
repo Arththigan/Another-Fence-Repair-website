@@ -30,8 +30,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Poppins"', 'sans-serif'],
-        body: ['"Inter"', 'sans-serif'],
+        display: ['Arial', 'Helvetica', 'sans-serif'],
+        body: ['Arial', 'Helvetica', 'sans-serif'],
       },
     },
   },

@@ -3,19 +3,19 @@ const reviews = [
     name: 'Sarah M.',
     location: 'Rochester, NY',
     text: 'Another Fence Repair fixed our storm-damaged wood fence within two days of calling. Fair pricing and the crew was respectful of our yard the whole time.',
-    avatar: 'https://i.pravatar.cc/100?img=47',
+    initials: 'SM',
   },
   {
     name: 'David R.',
     location: 'Irondequoit, NY',
     text: 'Our chain link fence had a huge tear from a fallen branch. They patched it up same-day and it looks brand new. Highly recommend.',
-    avatar: 'https://i.pravatar.cc/100?img=12',
+    initials: 'DR',
   },
   {
     name: 'Linda K.',
     location: 'Greece, NY',
     text: 'Replaced several rotted posts on our vinyl fence and it was seamless — you can not even tell it was repaired. Great communication throughout.',
-    avatar: 'https://i.pravatar.cc/100?img=32',
+    initials: 'LK',
   },
 ]
 
@@ -42,7 +42,9 @@ export default function Testimonials() {
               </div>
               <p className="mt-4 text-sm leading-relaxed text-charcoal-200">&ldquo;{r.text}&rdquo;</p>
               <div className="mt-6 flex items-center gap-3">
-                <img src={r.avatar} alt={r.name} className="h-11 w-11 rounded-full object-cover" />
+                <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-full bg-fence-700 text-xs font-bold text-white">
+                  {r.initials}
+                </span>
                 <div>
                   <p className="font-display text-sm font-bold text-white">{r.name}</p>
                   <p className="text-xs text-charcoal-400">{r.location}</p>

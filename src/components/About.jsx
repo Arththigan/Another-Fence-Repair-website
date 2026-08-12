@@ -14,12 +14,18 @@ export default function About() {
         <div className="relative">
           <div className="overflow-hidden rounded-3xl shadow-xl">
             <img
-              src="https://media.angi.com/s3fs-public/carpenters-repairing-fence-925541672.jpeg"
+              src="/images/optimized/about-1200.webp"
+              srcSet="/images/optimized/about-640.webp 640w, /images/optimized/about-1200.webp 1200w"
+              sizes="(max-width: 1023px) 100vw, 50vw"
               alt="Fence technician repairing a wood fence panel"
+              width="700"
+              height="560"
+              loading="lazy"
+              decoding="async"
               className="h-[420px] w-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-8 -right-6 hidden max-w-[220px] rounded-2xl bg-fence-500 p-5 text-white shadow-xl sm:block">
+          <div className="absolute -bottom-8 -right-6 hidden max-w-[220px] rounded-2xl bg-fence-700 p-5 text-white shadow-xl sm:block">
             <p className="font-display text-3xl font-extrabold">15+</p>
             <p className="mt-1 text-sm font-semibold text-fence-50">Years repairing &amp; building fences across Rochester, NY</p>
           </div>

@@ -11,7 +11,7 @@ export default function Hero() {
           <div className="relative z-10 pb-3">
             <span className="eyebrow bg-white/45 text-charcoal-900">Rochester’s local fence specialists</span>
             <h1 className="mt-5 max-w-4xl font-display text-[2.95rem] font-extrabold leading-[.94] tracking-[-.055em] text-charcoal-950 sm:text-[3.7rem] lg:text-[4.75rem]">
-              Everything your <span className="text-white">fence</span> could ever need.
+              Everything your <span className="text-charcoal-900 underline decoration-white/70 decoration-4 underline-offset-4">fence</span> could ever need.
             </h1>
             <p className="mt-4 max-w-xl text-sm font-medium leading-relaxed text-charcoal-800 sm:text-base">
               Fast repairs, lasting installations, and honest advice from a licensed local crew that treats your property like our own.
@@ -23,14 +23,24 @@ export default function Hero() {
             <div className="mt-6 grid max-w-xl divide-y divide-charcoal-950/15 border-y border-charcoal-950/15 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
               {services.map((item, i) => (
                 <a key={item} href="#services" className="group flex items-center justify-between py-3 text-xs font-bold text-charcoal-950 sm:px-3 sm:first:pl-0">
-                  <span><span className="mr-2 text-xs opacity-50">0{i + 1}</span>{item}</span><span className="transition group-hover:translate-x-1">→</span>
+                  <span><span className="mr-2 text-xs text-charcoal-900">0{i + 1}</span>{item}</span><span className="transition group-hover:translate-x-1">→</span>
                 </a>
               ))}
             </div>
           </div>
           <div className="relative min-h-[430px] lg:min-h-[clamp(500px,68vh,650px)]">
             <div className="absolute inset-x-0 bottom-0 top-4 overflow-hidden rounded-[2.5rem] rounded-br-[7rem] bg-charcoal-950 shadow-2xl shadow-charcoal-950/20">
-              <img src="https://lirp.cdn-website.com/254065b9/dms3rep/multi/opt/fence%2Binstallation-640w.jpg" alt="Professional contractor installing a residential wood fence" className="h-full w-full object-cover opacity-90" />
+              <img
+                src="/images/optimized/hero-1200.webp"
+                srcSet="/images/optimized/hero-640.webp 640w, /images/optimized/hero-1200.webp 1200w"
+                sizes="(max-width: 1023px) calc(100vw - 3rem), 50vw"
+                alt="Professional contractor installing a residential wood fence"
+                width="640"
+                height="720"
+                fetchPriority="high"
+                decoding="async"
+                className="h-full w-full object-cover opacity-90"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/65 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
                 <div><p className="text-4xl font-extrabold">15+</p><p className="mt-1 text-sm text-white/75">years protecting Rochester yards</p></div>
@@ -38,7 +48,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="absolute right-4 top-0 rounded-2xl bg-white p-4 shadow-xl sm:right-7">
-              <p className="text-xs font-bold uppercase tracking-wider text-charcoal-500">Available now</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-charcoal-700">Available now</p>
               <p className="mt-1 font-display text-sm font-extrabold text-charcoal-950"><span className="mr-2 inline-block h-2 w-2 rounded-full bg-green-500" />Same-day estimates</p>
             </div>
           </div>

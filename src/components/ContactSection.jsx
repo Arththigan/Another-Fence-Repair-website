@@ -1,14 +1,8 @@
-import { useEffect } from 'react'
+import { useState } from 'react'
 import { business } from '../data/business.js'
 
 export default function ContactSection() {
-  useEffect(() => {
-    if (document.querySelector('script[src="https://link.kdlead.com/js/form_embed.js"]')) return
-    const script = document.createElement('script')
-    script.src = 'https://link.kdlead.com/js/form_embed.js'
-    script.async = true
-    document.body.appendChild(script)
-  }, [])
+  const [formReady, setFormReady] = useState(false)
 
   return (
     <section id="contact" className="section-py bg-white">
@@ -60,7 +54,7 @@ export default function ContactSection() {
           </div>
 
           <div className="rounded-2xl border border-fence-100 bg-fence-50 p-3 sm:p-4 lg:col-span-3">
-            <iframe
+            {formReady ? <iframe
               src="https://link.kdlead.com/widget/form/SJjj3u41Ky83WT5ysGi9"
               style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
               id="inline-SJjj3u41Ky83WT5ysGi9"
@@ -76,8 +70,19 @@ export default function ContactSection() {
               data-layout-iframe-id="inline-SJjj3u41Ky83WT5ysGi9"
               data-form-id="SJjj3u41Ky83WT5ysGi9"
               title="Another Fence Repair"
+              loading="lazy"
               className="min-h-[700px] w-full"
-            />
+            /> : (
+              <div className="flex min-h-[700px] items-center justify-center rounded-xl bg-white px-6 text-center">
+                <div className="max-w-sm">
+                  <p className="font-display text-xl font-bold text-charcoal-950">Free estimate form</p>
+                  <p className="mt-2 text-sm text-charcoal-700">Open our secure request form when you are ready to share your project details.</p>
+                  <button type="button" onClick={() => setFormReady(true)} className="btn-primary mt-5">
+                    Open estimate form
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
